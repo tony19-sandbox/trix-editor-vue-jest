@@ -1,6 +1,6 @@
 <template>
   <div ref="trix">
-    <trix-editor @trix-initialize="onInit" />
+    <trix-editor @trix-initialize="onInit" @trix-change="onChange" />
   </div>
 </template>
 
@@ -16,12 +16,11 @@ export default {
       let toolbar = this.$refs.trix.getElementsByTagName('trix-toolbar')[0]
       toolbar.querySelector('[type=url]').type = 'text'
 
-      el.addEventListener('trix-change', e => {
-        this.$emit('input', e.target.innerHTML)
-      })
-
       // insert content
       el.value = this.value
+    },
+    onChange(e) {
+      this.$emit('input', e.target.innerHTML)
     }
   }
 }
