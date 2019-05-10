@@ -11,7 +11,8 @@ describe('TrixEdit', () => {
         localVue,
         propsData: {
           value: 'This is a test'
-        }
+        },
+        attachToDocument: true,
       })
 
       expect(wrapper.emitted().input).toEqual('This is a test')
