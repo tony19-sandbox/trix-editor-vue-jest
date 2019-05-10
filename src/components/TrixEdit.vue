@@ -17,7 +17,7 @@ export default {
       toolbar.querySelector('[type=url]').type = 'text'
 
       // insert content
-      el.editor.insertHTML(this.value)
+      el.value = this.value
 
       el.addEventListener('trix-change', e => {
         this.$emit('input', e.target.innerHTML)
