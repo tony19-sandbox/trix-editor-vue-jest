@@ -19,6 +19,7 @@ module.exports = {
   snapshotSerializers: [
     'jest-serializer-vue'
   ],
+  setupTestFrameworkScriptFile: '<rootDir>/jest-setup.js',
   testMatch: [
     '**/tests/unit/**/*.spec.(js|jsx|ts|tsx)|**/__tests__/*.(js|jsx|ts|tsx)'
   ],
