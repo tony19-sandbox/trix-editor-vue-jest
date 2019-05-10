@@ -6,7 +6,7 @@ localVue.config.ignoredElements = ['trix-editor']
 
 describe('TrixEdit', () => {
   describe('value prop', () => {
-    it('renders text when value is set', () => {
+    it('renders text when value is set', async () => {
       const wrapper = mount(TrixEdit, {
         localVue,
         propsData: {
@@ -15,7 +15,8 @@ describe('TrixEdit', () => {
         attachToDocument: true,
       })
 
-      expect(wrapper.emitted().input).toEqual('This is a test')
+      const inputData = await new Promise(r => wrapper.vm.$on('input', r))
+      expect(inputData).toContain('This is a test')
     })
   })
 })
