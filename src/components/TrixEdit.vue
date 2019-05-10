@@ -8,6 +8,7 @@
 import 'trix'
 
 export default {
+  props: ['value'],
   mounted() {
     let el = this.$refs.trix.getElementsByTagName('trix-editor')[0]
     // HACK: change the URL field in the link dialog to allow non-urls
