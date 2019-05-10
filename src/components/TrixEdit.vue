@@ -1,5 +1,5 @@
 <template>
-  <div ref="trix">
+  <div>
     <trix-editor @trix-initialize="onInit" @trix-change="onChange" />
   </div>
 </template>
@@ -13,7 +13,7 @@ export default {
     onInit(e) {
       let el = e.target
       // HACK: change the URL field in the link dialog to allow non-urls
-      let toolbar = this.$refs.trix.getElementsByTagName('trix-toolbar')[0]
+      let toolbar = el.toolbarElement
       toolbar.querySelector('[type=url]').type = 'text'
 
       // insert content
