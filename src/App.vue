@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <TrixEdit />
+    <TrixEdit value="<b>hello world</b>" />
   </div>
 </template>
 
