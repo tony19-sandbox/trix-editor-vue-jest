@@ -16,12 +16,12 @@ export default {
       let toolbar = this.$refs.trix.getElementsByTagName('trix-toolbar')[0]
       toolbar.querySelector('[type=url]').type = 'text'
 
-      // insert content
-      el.value = this.value
-
       el.addEventListener('trix-change', e => {
         this.$emit('input', e.target.innerHTML)
       })
+
+      // insert content
+      el.value = this.value
     }
   }
 }
